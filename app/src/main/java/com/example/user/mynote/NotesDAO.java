@@ -28,7 +28,7 @@ public class NotesDAO {
     public NotesDAO( Context context ){
         db=MyDBHelper.getDatabase(context);
     }
-    public void Close(){
+    public void close(){
         db.close();
     }
 

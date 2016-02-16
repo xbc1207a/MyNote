@@ -11,7 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private NotesDAO notedb=null;
+    private NotesDAO noteDatabase=null;
     private ListView list=null;
 
     @Override
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        notedb=new NotesDAO(this);
+        noteDatabase=new NotesDAO(this);
         findView();
     }
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        notedb.close();
+        noteDatabase.close();
         super.onBackPressed();
     }
     @Override
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         list=(ListView)findViewById(R.id.noteList);
     }
     public void setListView(){
-        ArrayList<Note> notes=notedb.getAllNotes();
+        ArrayList<Note> notes=noteDatabase.getAllNotes();
         ArrayAdapter<String> adapter;
         ArrayList<String> strings=new ArrayList<>();
 

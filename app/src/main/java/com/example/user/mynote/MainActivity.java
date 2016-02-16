@@ -11,7 +11,7 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     private NotesDAO notedb=null;
     private ListView list=null;
-    private ArrayAdapter datas=null;
+    private ArrayAdapter data=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

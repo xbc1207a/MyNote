@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> strings=new ArrayList<>();
 
         if( notes.size()==0 ){
-            String s="Nothing";
+            String s="Nothing in the database";
             strings.add(s);
         }
         else{

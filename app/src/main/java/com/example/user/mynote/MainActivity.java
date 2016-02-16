@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         notedb=new NotesDAO(this);
+        findView();
     }
 
     @Override
@@ -43,15 +44,16 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     public void onBackPressed() {
         notedb.close();
         super.onBackPressed();
     }
-
     @Override
     protected void onResume() {
         super.onResume();
+    }
+    public void findView(){
+        list=(ListView)findViewById(R.id.noteList);
     }
 }

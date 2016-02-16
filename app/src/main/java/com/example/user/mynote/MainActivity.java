@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setListView(){
         ArrayList<Note> notes=notedb.getAllNotes();
-        ArrayAdapter<String> adapter=null;
+        ArrayAdapter<String> adapter;
         ArrayList<String> strings=new ArrayList<>();
 
         if( notes.size()==0 ){
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 strings.add( notes.get(i).getTitle() );
             }
         }
-        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,strings);
+        adapter=new ArrayAdapter<>(this,android.R.layout.simple_expandable_list_item_1,strings);
         list.setAdapter( adapter );
     }
 }

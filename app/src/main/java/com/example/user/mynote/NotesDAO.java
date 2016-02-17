@@ -79,6 +79,7 @@ public class NotesDAO {
         String sql="select * from "+tableName+" where "+Key+"="+id;
         Cursor result=db.rawQuery(sql,null);
         Note temp=new Note( result.getLong(0),result.getString(1),result.getString(2) );
+        result.close();
         return temp;
     }
 }

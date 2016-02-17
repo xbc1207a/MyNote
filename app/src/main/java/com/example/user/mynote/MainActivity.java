@@ -87,10 +87,7 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if( notes.size()==0 ){
-                    Toast.makeText(getApplicationContext(),"Nothing",Toast.LENGTH_SHORT).show();
-                }
-                else{
+                if( notes.size()!=0 ){
                     Toast.makeText(getApplicationContext(),"You choose "+position,Toast.LENGTH_SHORT).show();
                 }
             }

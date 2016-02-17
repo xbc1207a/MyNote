@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class NotesDAO {
     public static final String tableName="Notes";
 
-    public static final String Key="_id";
-    public static final String ColumnTitle="title";
-    public static final String ColumnText="text";
+    public static final String Key="_id";// long 0
+    public static final String ColumnTitle="title";// string 1
+    public static final String ColumnText="text";// string 2
 
     public static final String CreateTable="Create Table "+tableName+" ("+
             Key+" integer primary key autoincrement, "+
@@ -74,5 +74,11 @@ public class NotesDAO {
 
         result.close();
         return notes;
+    }
+    public Note getOneNote(long id){
+        String sql="seletc * from "+tableName+" where "+Key+"="+id;
+        Cursor result=db.rawQuery(sql,null);
+        Note temp=new Note( result.getLong(0),result.getString(1),result.getString(2) );
+        return temp;
     }
 }

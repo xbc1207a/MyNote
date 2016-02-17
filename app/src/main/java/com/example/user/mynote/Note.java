@@ -9,7 +9,8 @@ public class Note {
     private long id=0;
 
     public Note(){}
-    public Note(String title,String text){
+    public Note(long id,String title,String text){
+        this.id=id;
         this.title=title;
         this.text=text;
     }

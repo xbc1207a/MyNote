@@ -1,7 +1,8 @@
 package com.example.user.mynote;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 public class ReadNote extends AppCompatActivity {
@@ -28,7 +29,17 @@ public class ReadNote extends AppCompatActivity {
 
         Note n=noteDatabase.getOneNote( getId );
 
-        title.setText( "Title : "+n.getTitle() );
-        text.setText( "Text : "+n.getText() );
+        title.setText( n.getTitle() );
+        text.setText( n.getText() );
+    }
+    public void onClick(View view){
+        switch ( view.getId() ){
+            case R.id.back:
+                this.finish();
+                break;
+            case R.id.modify:
+                this.finish();
+                break;
+        }
     }
 }

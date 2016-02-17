@@ -57,8 +57,7 @@ public class NotesDAO {
         return db.delete(tableName, where, null)>0;
     }
     public ArrayList<Note> getAllNotes(){
-        String sql="select * "+
-                "from "+tableName;
+        String sql="select * from "+tableName;
         ArrayList<Note> notes=new ArrayList<>();
         Cursor result=db.rawQuery(sql,null);
 

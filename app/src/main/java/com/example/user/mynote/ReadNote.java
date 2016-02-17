@@ -25,9 +25,10 @@ public class ReadNote extends AppCompatActivity {
     public void setTextView(){
         Bundle take=getIntent().getExtras();
         long getId=take.getLong("noteId");
+
         Note n=noteDatabase.getOneNote( getId );
 
-        title.setText( n.getTitle() );
-        text.setText( n.getText() );
+        title.setText( "Title : "+n.getTitle() );
+        text.setText( "Text : "+n.getText() );
     }
 }

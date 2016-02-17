@@ -87,13 +87,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if( notes.size()!=0 ){
-                    //Toast.makeText(getApplicationContext(),"You choose "+position,Toast.LENGTH_SHORT).show();
                     //set bundle
                     Bundle bundle=new Bundle();
-                    bundle.putLong( "noteId",notes.get(position).getId() );
+                    bundle.putLong("noteId", notes.get(position).getId());
                     //set intent
                     Intent goToReadNote=new Intent( MainActivity.this,ReadNote.class );
-                    goToReadNote.putExtras( bundle );
+                    goToReadNote.putExtras(bundle);
                     //go to the ReadNote activity
                     startActivity( goToReadNote );
                 }

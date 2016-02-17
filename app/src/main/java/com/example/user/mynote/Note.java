@@ -8,6 +8,12 @@ public class Note {
     private String text;
     private long id=0;
 
+    public Note(){}
+    public Note(String title,String text){
+        this.title=title;
+        this.text=text;
+    }
+
     public void setId( long id ){
         this.id=id;
     }

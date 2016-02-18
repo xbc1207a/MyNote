@@ -1,5 +1,6 @@
 package com.example.user.mynote;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,6 +41,13 @@ public class ReadNote extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.modify:
+                Bundle b=new Bundle();
+                b.putLong("Id",getId);
+
+                Intent goToModifyNote=new Intent( ReadNote.this,ModifyNote.class );
+                goToModifyNote.putExtras(b);
+
+                startActivity( goToModifyNote );
                 this.finish();
                 break;
             case R.id.delete:

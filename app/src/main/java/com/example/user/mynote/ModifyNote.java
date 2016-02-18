@@ -28,7 +28,7 @@ public class ModifyNote extends AppCompatActivity {
     }
     public void setText(){
         Bundle take=getIntent().getExtras();
-        getId=take.getLong("noteId");
+        getId=take.getLong("Id");
 
         Note n=noteDatabase.getOneNote( getId );
 

@@ -24,7 +24,7 @@ public class NewNote extends AppCompatActivity {
         this.findView();
     }
     public void findView(){
-        title=(EditText)findViewById(R.id.title);
+        title=(EditText)findViewById(R.id.modifyTitle);
         text=(EditText)findViewById(R.id.text);
     }
     public void onClick(View event){

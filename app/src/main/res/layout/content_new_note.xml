@@ -36,7 +36,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/title"
+        android:id="@+id/modifyTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -50,7 +50,7 @@
         android:ems="10"
         android:id="@+id/text"
         android:hint="text"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/modifyTitle"
         android:layout_alignRight="@+id/finish"
         android:layout_alignEnd="@+id/finish" />
 

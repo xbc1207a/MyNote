@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ReadNote extends AppCompatActivity {
     private NotesDAO noteDatabase=null;
     private TextView title=null;
     private TextView text=null;
+    private long getId=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class ReadNote extends AppCompatActivity {
     }
     public void setTextView(){
         Bundle take=getIntent().getExtras();
-        long getId=take.getLong("noteId");
+        getId=take.getLong("noteId");
 
         Note n=noteDatabase.getOneNote( getId );
 
@@ -38,6 +40,15 @@ public class ReadNote extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.modify:
+                this.finish();
+                break;
+            case R.id.delete:
+                if( noteDatabase.delete( getId ) ){
+                    Toast.makeText(getApplicationContext(),"Delete done",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Delete fail",Toast.LENGTH_SHORT).show();
+                }
                 this.finish();
                 break;
         }

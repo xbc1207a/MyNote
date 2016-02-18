@@ -41,12 +41,10 @@ public class NewNote extends AppCompatActivity {
                 newNote.setText(stringOfText.toString());
 
                 if( noteDatabase.insert( newNote )==-1 ){
-                    Toast t=Toast.makeText(getApplicationContext(),"Save has been fail",Toast.LENGTH_SHORT);
-                    t.show();
+                    Toast.makeText(getApplicationContext(),"Save has been fail",Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast t=Toast.makeText(getApplicationContext(),newNote.getTitle()+" has been successful",Toast.LENGTH_SHORT);
-                    t.show();
+                    Toast.makeText(getApplicationContext(),newNote.getTitle()+" has been successful",Toast.LENGTH_SHORT).show();
                 }
 
                 this.finish();

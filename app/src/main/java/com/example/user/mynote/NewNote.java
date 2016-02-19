@@ -37,6 +37,11 @@ public class NewNote extends AppCompatActivity {
                 Editable stringOfTitle=title.getText();
                 Editable stringOfText=text.getText();
 
+                /*if( stringOfTitle==null ){
+                    Toast.makeText(getApplicationContext(),"The title cannot be empty",Toast.LENGTH_SHORT).show();
+                    break;
+                }*/
+
                 newNote.setTitle(stringOfTitle.toString());
                 newNote.setText(stringOfText.toString());
 

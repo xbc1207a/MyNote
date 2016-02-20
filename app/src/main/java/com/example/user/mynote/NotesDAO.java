@@ -38,9 +38,7 @@ public class NotesDAO {
         cv.put(ColumnTitle,note.getTitle());
         cv.put(ColumnText,note.getText());
 
-        long id=db.insert(tableName,null,cv);
-
-        return id;
+        return db.insert(tableName,null,cv);
     }
     public boolean update(Note note){
         String where=Key+"="+note.getId();

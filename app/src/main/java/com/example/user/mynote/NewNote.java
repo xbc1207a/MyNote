@@ -33,17 +33,9 @@ public class NewNote extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.finish:
-                Note newNote=new Note();
                 Editable stringOfTitle=title.getText();
                 Editable stringOfText=text.getText();
-
-                /*if( stringOfTitle==null ){
-                    Toast.makeText(getApplicationContext(),"The title cannot be empty",Toast.LENGTH_SHORT).show();
-                    break;
-                }*/
-
-                newNote.setTitle(stringOfTitle.toString());
-                newNote.setText(stringOfText.toString());
+                Note newNote=new Note( 0,stringOfTitle.toString(),stringOfText.toString() );
 
                 if( noteDatabase.insert( newNote )==-1 ){
                     Toast.makeText(getApplicationContext(),"Save has been fail",Toast.LENGTH_SHORT).show();

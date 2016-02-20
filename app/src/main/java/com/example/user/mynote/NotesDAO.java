@@ -20,7 +20,7 @@ public class NotesDAO {
     public static final String CreateTable="Create Table "+tableName+" ("+
             Key+" integer primary key autoincrement, "+
             ColumnTitle+" text not null, "+
-            ColumnText+" text "+
+            ColumnText+" text not null"+
             ");";
 
     private SQLiteDatabase db=null;

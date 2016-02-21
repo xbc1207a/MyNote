@@ -4,9 +4,10 @@ package com.example.user.mynote;
  * Created by user on 2016/2/14.
  */
 public class Note {
+    private long id=0;
     private String title;
     private String text;
-    private long id=0;
+    private int year=0,month=0,day=0,hour=0,minute=0;
 
     public Note(){}
     public Note(long id,String title,String text){
@@ -24,6 +25,28 @@ public class Note {
     public void setText( String text ){
         this.text=text;
     }
+    public void setTime(int year,int month,int day,int hour,int minute){
+        this.year=year;
+        this.month=month;
+        this.day=day;
+        this.hour=hour;
+        this.minute=minute;
+    }
+    public void setYear(int year){
+        this.year=year;
+    }
+    public void setMonth(int month){
+        this.month=month;
+    }
+    public void setDay(int day){
+        this.day=day;
+    }
+    public void setHour(int hour){
+        this.hour=hour;
+    }
+    public void setMinute(int minute){
+        this.minute=minute;
+    }
 
     public long getId(){
         return this.id;
@@ -33,5 +56,20 @@ public class Note {
     }
     public String getText(){
         return this.text;
+    }
+    public int getYear(){
+        return this.year;
+    }
+    public int getMonth(){
+        return this.month;
+    }
+    public int getDay(){
+        return this.day;
+    }
+    public int getHour(){
+        return this.hour;
+    }
+    public int getMinute(){
+        return this.minute;
     }
 }

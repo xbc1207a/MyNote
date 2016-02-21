@@ -37,12 +37,8 @@ public class NewNote extends AppCompatActivity {
                 Editable stringOfText=text.getText();
                 Note newNote=new Note( 0,stringOfTitle.toString(),stringOfText.toString() );
 
-                if( noteDatabase.insert( newNote )==-1 ){
-                    Toast.makeText(getApplicationContext(),"Save has been fail",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),newNote.getTitle()+" has been successful",Toast.LENGTH_SHORT).show();
-                }
+                if( noteDatabase.insert( newNote )==-1 ) Toast.makeText(getApplicationContext(),"Save has been fail",Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(),newNote.getTitle()+" has been successful",Toast.LENGTH_SHORT).show();
 
                 this.finish();
                 break;

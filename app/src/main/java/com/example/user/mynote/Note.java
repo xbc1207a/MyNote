@@ -15,6 +15,16 @@ public class Note {
         this.title=title;
         this.text=text;
     }
+    public Note(long id,String title,String text,int year,int month,int day,int hour,int minute){
+        this.id=id;
+        this.title=title;
+        this.text=text;
+        this.year=year;
+        this.month=month;
+        this.day=day;
+        this.hour=hour;
+        this.minute=minute;
+    }
 
     public void setId( long id ){
         this.id=id;

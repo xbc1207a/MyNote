@@ -8,6 +8,7 @@ public class Note {
     private String title;
     private String text;
     private int year=0,month=0,day=0,hour=0,minute=0;
+    /* month : 0 to 11 */
 
     public Note(){}
     public Note(long id,String title,String text){

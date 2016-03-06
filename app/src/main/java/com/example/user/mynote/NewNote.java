@@ -18,7 +18,7 @@ public class NewNote extends AppCompatActivity {
     private EditText text=null;
     private DatePicker date=null;
     private TimePicker time=null;
-    private int year=0,month=0,day=0;
+    private int year=0,month=0,day=0,hour=0,minute=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +39,25 @@ public class NewNote extends AppCompatActivity {
     }
     public void setContent(){
         Calendar today=Calendar.getInstance();
-
-        date.init( today.get(Calendar.YEAR),today.get(Calendar.MONTH),today.get(Calendar.DAY_OF_MONTH),
-                new DatePicker.OnDateChangedListener(){
+        // set the datePicker
+        date.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH), today.get(Calendar.DAY_OF_MONTH),
+                new DatePicker.OnDateChangedListener() {
                     @Override
-                public void onDateChanged( DatePicker view,int getYear,int getMonth,int getDay ){
-                        year=getYear;
-                        month=getMonth;
-                        day=getDay;
+                    public void onDateChanged(DatePicker view, int getYear, int getMonth, int getDay) {
+                        year = getYear;
+                        month = getMonth;
+                        day = getDay;
                     }
-        } );
+                });
+        // set the timePicker
+        time.setIs24HourView(true);
+        time.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener(){
+            @Override
+            public void onTimeChanged(TimePicker view,int getHour,int getMinute){
+                hour=getHour;
+                minute=getMinute;
+            }
+        });
     }
     public void onClick(View event){
         switch ( event.getId() ){

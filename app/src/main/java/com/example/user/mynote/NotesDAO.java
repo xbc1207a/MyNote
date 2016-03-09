@@ -25,7 +25,12 @@ public class NotesDAO {
     public static final String CreateTable="Create Table "+tableName+" ("+
             Key+" integer primary key autoincrement, "+
             ColumnTitle+" text not null, "+
-            ColumnText+" text not null "+
+            ColumnText+" text not null, "+
+            ColumnYear+" integer not null, "+
+            ColumnMonth+" integer not null, "+
+            ColumnDay+" integer not null, "+
+            ColumnHour+" integer not null, "+
+            ColumnMinute+" integer not null "+
             ");";
 
     private SQLiteDatabase db=null;

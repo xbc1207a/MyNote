@@ -44,6 +44,11 @@ public class NotesDAO {
 
         cv.put(ColumnTitle,note.getTitle());
         cv.put(ColumnText,note.getText());
+        cv.put(ColumnYear,note.getYear());
+        cv.put(ColumnMonth,note.getMonth());
+        cv.put(ColumnDay,note.getDay());
+        cv.put(ColumnHour,note.getHour());
+        cv.put(ColumnMinute,note.getMinute());
 
         return db.insert(tableName,null,cv);
     }

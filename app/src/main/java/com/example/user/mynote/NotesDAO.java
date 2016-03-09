@@ -16,11 +16,16 @@ public class NotesDAO {
     public static final String Key="_id";// long 0
     public static final String ColumnTitle="title";// string 1
     public static final String ColumnText="text";// string 2
+    public static final String ColumnYear="year";// int 3
+    public static final String ColumnMonth="month";// int 4
+    public static final String ColumnDay="day";// int 5
+    public static final String ColumnHour="hour";// int 6
+    public static final String ColumnMinute="minute";// int 7
 
     public static final String CreateTable="Create Table "+tableName+" ("+
             Key+" integer primary key autoincrement, "+
             ColumnTitle+" text not null, "+
-            ColumnText+" text not null"+
+            ColumnText+" text not null "+
             ");";
 
     private SQLiteDatabase db=null;

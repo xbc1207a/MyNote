@@ -82,6 +82,11 @@ public class NotesDAO {
             temp.setId(result.getLong(0));
             temp.setTitle(result.getString(1));
             temp.setText(result.getString(2));
+            temp.setYear(result.getInt(3));
+            temp.setMonth(result.getInt(4));
+            temp.setDay(result.getInt(5));
+            temp.setHour(result.getInt(6));
+            temp.setMinute(result.getInt(7));
 
             notes.add(temp);
         }

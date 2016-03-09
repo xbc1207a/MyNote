@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-/**
- * Created by user on 2016/2/14.
- */
 public class NotesDAO {
     public static final String tableName="Notes";
 

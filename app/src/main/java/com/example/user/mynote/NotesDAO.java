@@ -99,6 +99,7 @@ public class NotesDAO {
         Cursor result=db.rawQuery(sql,null);
         result.moveToFirst();
         Note temp=new Note( result.getLong(0),result.getString(1),result.getString(2) );
+        temp.setTime( result.getInt(3),result.getInt(4),result.getInt(5),result.getInt(6),result.getInt(7) );
         result.close();
         return temp;
     }

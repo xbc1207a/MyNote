@@ -1,8 +1,5 @@
 package com.example.user.mynote;
 
-/**
- * Created by user on 2016/2/14.
- */
 public class Note {
     private long id=0;
     private String title;

@@ -68,6 +68,7 @@ public class NewNote extends AppCompatActivity {
                 Editable stringOfTitle=title.getText();
                 Editable stringOfText=text.getText();
                 Note newNote=new Note( 0,stringOfTitle.toString(),stringOfText.toString() );
+                newNote.setTime(year,month,day,hour,minute);
 
                 if( noteDatabase.insert( newNote )==-1 ) Toast.makeText(getApplicationContext(),"Save has been fail",Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(),newNote.getTitle()+" has been successful",Toast.LENGTH_SHORT).show();

@@ -80,4 +80,10 @@ public class Note {
     public int getMinute(){
         return this.minute;
     }
+    // this method is to print the content of the note
+    public void print(){
+        System.out.println("title: "+this.title);
+        System.out.println("due date: "+this.year+"/"+this.month+"/"+this.day+" "+this.hour+":"+this.minute);
+        System.out.println("text: "+this.text);
+    }
 }

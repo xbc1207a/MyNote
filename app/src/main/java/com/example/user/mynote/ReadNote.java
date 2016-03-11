@@ -9,9 +9,7 @@ import android.widget.Toast;
 
 public class ReadNote extends AppCompatActivity {
     private NotesDAO noteDatabase=null;
-    private TextView title=null;
-    private TextView text=null;
-    private TextView dueDate=null;
+    private TextView title=null,text=null,dueDate=null;
     private long getId=0;
 
     @Override
@@ -33,7 +31,7 @@ public class ReadNote extends AppCompatActivity {
         getId=take.getLong("noteId");
 
         Note n=noteDatabase.getOneNote( getId );
-        String date=n.getYear()+"/"+n.getMonth()+"/"+n.getDay()+" "+n.getHour()+":"+n.getMinute();
+        String date=n.getYear()+"/"+n.getMonth()+"/" + n.getDay()+" "+ n.getHour()+":"+n.getMinute();
 
         title.setText( n.getTitle() );
         dueDate.setText( date );

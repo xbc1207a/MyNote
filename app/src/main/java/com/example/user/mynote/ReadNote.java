@@ -55,12 +55,9 @@ public class ReadNote extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.delete:
-                if( noteDatabase.delete( getId ) ){
-                    Toast.makeText(getApplicationContext(),"Delete done",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Delete fail",Toast.LENGTH_SHORT).show();
-                }
+                if( noteDatabase.delete( getId ) ) Toast.makeText(getApplicationContext(),"Delete done",Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(),"Delete fail",Toast.LENGTH_SHORT).show();
+
                 this.finish();
                 break;
         }

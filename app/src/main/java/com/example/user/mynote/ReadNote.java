@@ -11,6 +11,7 @@ public class ReadNote extends AppCompatActivity {
     private NotesDAO noteDatabase=null;
     private TextView title=null;
     private TextView text=null;
+    private TextView dueDate=null;
     private long getId=0;
 
     @Override
@@ -25,14 +26,17 @@ public class ReadNote extends AppCompatActivity {
     public void findView(){
         title=(TextView)findViewById(R.id.readTitle);
         text=(TextView)findViewById(R.id.readText);
+        dueDate=(TextView)findViewById(R.id.dueDate);
     }
     public void setTextView(){
         Bundle take=getIntent().getExtras();
         getId=take.getLong("noteId");
 
         Note n=noteDatabase.getOneNote( getId );
+        String date=n.getYear()+"/"+n.getMonth()+"/"+n.getDay()+" "+n.getHour()+":"+n.getMinute();
 
         title.setText( n.getTitle() );
+        dueDate.setText( date );
         text.setText( n.getText() );
     }
     public void onClick(View view){

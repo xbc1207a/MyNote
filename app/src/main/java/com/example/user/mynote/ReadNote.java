@@ -11,6 +11,7 @@ public class ReadNote extends AppCompatActivity {
     private NotesDAO noteDatabase=null;
     private TextView title=null,text=null,dueDate=null;
     private long getId=0;
+    private Note note=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,12 @@ public class ReadNote extends AppCompatActivity {
         Bundle take=getIntent().getExtras();
         getId=take.getLong("noteId");
 
-        Note n=noteDatabase.getOneNote( getId );
-        String date=n.getYear()+"/"+n.getMonth()+"/" + n.getDay()+" "+ n.getHour()+":"+n.getMinute();
+        note=noteDatabase.getOneNote( getId );
+        String date=note.getYear()+"/"+note.getMonth()+"/" + note.getDay()+" "+ note.getHour()+":"+note.getMinute();
 
-        title.setText( n.getTitle() );
+        title.setText( note.getTitle() );
         dueDate.setText( date );
-        text.setText( n.getText() );
+        text.setText( note.getText() );
     }
     public void onClick(View view){
         switch ( view.getId() ){
@@ -53,7 +54,7 @@ public class ReadNote extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.delete:
-                if( noteDatabase.delete( getId ) ) Toast.makeText(getApplicationContext(),"Delete done",Toast.LENGTH_SHORT).show();
+                if( noteDatabase.delete( getId ) ) Toast.makeText(getApplicationContext(),note.getTitle()+" has been deleted",Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(),"Delete fail",Toast.LENGTH_SHORT).show();
 
                 this.finish();

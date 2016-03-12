@@ -6,7 +6,7 @@ public class Note {
     private String text;
     private int year=0,month=0,day=0,hour=0,minute=0;
     /* month : 0 to 11 */
-
+    // the constructors
     public Note(){}
     public Note(long id,String title,String text){
         this.id=id;
@@ -23,7 +23,7 @@ public class Note {
         this.hour=hour;
         this.minute=minute;
     }
-
+    // the setting methods
     public void setId( long id ){
         this.id=id;
     }
@@ -55,7 +55,7 @@ public class Note {
     public void setMinute(int minute){
         this.minute=minute;
     }
-
+    // the getting methods
     public long getId(){
         return this.id;
     }

@@ -15,6 +15,7 @@ public class ModifyNote extends AppCompatActivity {
     private NotesDAO noteDatabase=null;
     private DatePicker date=null;
     private TimePicker time=null;
+    private int year=0,month=0,day=0,hour=0,minute=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

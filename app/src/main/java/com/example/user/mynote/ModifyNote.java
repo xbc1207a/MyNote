@@ -36,24 +36,30 @@ public class ModifyNote extends AppCompatActivity {
         Bundle take=getIntent().getExtras();
         getId=take.getLong("Id");
 
-        Note n=noteDatabase.getOneNote( getId );
+        Note note=noteDatabase.getOneNote( getId );
 
-        title.setText( n.getTitle() );
-        text.setText( n.getText() );
+        title.setText( note.getTitle() );
+        text.setText( note.getText() );
+        // set the DatePicker
+        date.init( note.getYear(),note.getMonth(),note.getDay(),
+                new DatePicker.OnDateChangedListener(){
+                    @Override
+                public void onDateChanged(DatePicker view,int getYear,int getMonth,int getDay){
+                        year=getYear;
+                        month=getMonth;
+                        day=getDay;
+                    }
+                });
     }
     public void onClick(View view){
         switch ( view.getId() ){
             case R.id.modifyButton:
                 Editable stringOfTitle=title.getText();
                 Editable stringOfText=text.getText();
-                Note modifyNote=new Note( getId,stringOfTitle.toString(),stringOfText.toString() );
+                Note modifyNote=new Note( getId,stringOfTitle.toString(),stringOfText.toString(),year,month,day,hour,minute );
 
-                if( noteDatabase.update(modifyNote) ){
-                    Toast.makeText(getApplicationContext(),"Modify done",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Modify fail",Toast.LENGTH_SHORT).show();
-                }
+                if( noteDatabase.update(modifyNote) ) Toast.makeText(getApplicationContext(),"Modify done",Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(),"Modify fail",Toast.LENGTH_SHORT).show();
 
                 this.finish();
                 break;

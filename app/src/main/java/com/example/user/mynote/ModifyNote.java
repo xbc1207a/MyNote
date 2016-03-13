@@ -4,14 +4,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 public class ModifyNote extends AppCompatActivity {
-    private EditText title=null;
-    private EditText text=null;
+    private EditText title=null,text=null;
     private long getId=0;
     private NotesDAO noteDatabase=null;
+    private DatePicker date=null;
+    private TimePicker time=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,8 @@ public class ModifyNote extends AppCompatActivity {
     public void findView(){
         title=(EditText)findViewById(R.id.modifyTitle);
         text=(EditText)findViewById(R.id.modifyText);
+        date=(DatePicker)findViewById(R.id.datePicker2);
+        time=(TimePicker)findViewById(R.id.timePicker2);
     }
     public void setText(){
         Bundle take=getIntent().getExtras();

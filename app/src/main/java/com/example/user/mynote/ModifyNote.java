@@ -50,6 +50,17 @@ public class ModifyNote extends AppCompatActivity {
                         day=getDay;
                     }
                 });
+        // set the TimePicker
+        time.setIs24HourView(true);
+        time.setOnTimeChangedListener(
+                new TimePicker.OnTimeChangedListener(){
+                    @Override
+                public void onTimeChanged(TimePicker view,int getHour,int getMinute){
+                        hour=getHour;
+                        minute=getMinute;
+                    }
+                }
+        );
     }
     public void onClick(View view){
         switch ( view.getId() ){

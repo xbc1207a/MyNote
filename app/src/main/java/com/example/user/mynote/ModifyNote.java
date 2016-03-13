@@ -71,7 +71,7 @@ public class ModifyNote extends AppCompatActivity {
 
                 if( noteDatabase.update(modifyNote) ) Toast.makeText(getApplicationContext(),"Modify done",Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(),"Modify fail",Toast.LENGTH_SHORT).show();
-
+                // zzz hhh ddd
                 this.finish();
                 break;
             case R.id.cancelButton:

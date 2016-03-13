@@ -5,7 +5,7 @@ public class Note {
     private String title;
     private String text;
     private int year=0,month=0,day=0,hour=0,minute=0;
-    /* month : 0 to 11 */
+    /* month : 0 to 11 and hour : 1 to 24 */
     // the constructors
     public Note(){}
     public Note(long id,String title,String text){

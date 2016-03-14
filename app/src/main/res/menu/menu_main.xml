@@ -4,7 +4,7 @@
     tools:context="com.example.user.mynote.MainActivity">
     <item
         android:id="@+id/add_a_note"
-        android:title="Add One Note" />
+        android:title="Add New Note" />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

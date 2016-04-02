@@ -75,6 +75,8 @@ public class ModifyNote extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.cancelButton:
+                Toast.makeText(getApplicationContext(),"Nothing change",Toast.LENGTH_SHORT).show();
+
                 this.finish();
                 break;
         }
